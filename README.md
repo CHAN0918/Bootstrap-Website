@@ -1,2 +1,2 @@
 # Bootstrap-Website
-The website about the charity.
+The website about the Kidohelp.
