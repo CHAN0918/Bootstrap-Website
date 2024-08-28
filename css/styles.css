@@ -278,7 +278,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
 
 .objectives h2 {
   font-size: 1.5rem;
-  color: #444;
+  color: #303033;
   margin-bottom: 1rem;
 }
 
@@ -296,6 +296,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   counter-increment: item;
   padding-left: 2rem;
   position: relative;
+  color: #1D1C1b;
 }
 
 .objectives ol li:before {
