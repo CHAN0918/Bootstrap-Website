@@ -1,549 +1,1275 @@
 <!DOCTYPE html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="" />
+        <meta name="author" content="" />
+        <title>KidoCode shelter webpage - EN</title>
+        <!-- Favicon-->
+        <link rel="icon" type="image/x-icon" href="assets/img/kidocode_icon.png" />
+            
+        <!-- Bootstrap Icons-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
 
-<head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>KidoHelp</title>
-    <!-- Favicon-->
-    <link rel="icon" type="image/x-icon" href="assets/img/kidocode_icon.png" />
-    <!-- Bootstrap Icons-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-    <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic"
-        rel="stylesheet" type="text/css" />
-    <!-- SimpleLightbox plugin CSS-->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.css" rel="stylesheet" />
-    <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
-    <!--SwiperJS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+        <!-- Google fonts-->
+        <link href="https://fonts.googleapis.com/css?family=Merriweather+Sans:400,700" rel="stylesheet" />
+        <link href="https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic" rel="stylesheet" type="text/css" />
 
-    <style>
-        .profile-pic {
-            width: 90px;
-            height: 90px;
-            object-fit: cover;
-            /* Ensure the image covers the area */
-        }
 
-        .carousel-item img {
-            width: 100%;
-            /* Ensure the image covers the container */
-            height: 400px;
-            /* Set the desired height */
-            object-fit: cover;
-            /* Ensure the image maintains its aspect ratio */
-        }
+        <!-- Core theme CSS (includes Bootstrap)-->
+        <link href="css/styles.css" rel="stylesheet" />
 
-        .custom-container {
-            max-width: 800px;
-            margin: 0 auto;
-            /* Center the container */
-        }
+        <!-- Owl Carousel CSS -->
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet">
+        
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.css">
 
-        .swiper {
-            width: 100%;
-            padding-top: 50px;
-            padding-bottom: 50px;
-        }
+        <style>
+            /* Specific styles for the custom card */
+            .testinomials-video{
+                border-radius: 30px;
+                max-height: 600px;
+                max-width: 600px;
+            }
 
-        .swiper-slide {
-            background-position: center;
-            background-size: cover;
-            width: 400px;
-            height: 200px;
-        }
-
-        .swiper-slide img {
-            display: block;
-            width: 100%;
-        }
-
-        /* Optional: Hover effect */
-        .carousel-control-prev:hover,
-        .carousel-control-next:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-            /* Darker background on hover */
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.5);
-        }
-
-        /* Adjust the position of the carousel indicators */
-        .carousel-indicators {
-            position: absolute;
-            bottom: 2%;
-            z-index: 15;
-            /* Ensure they are above other elements */
-            display: flex;
-            justify-content: center;
-            padding-left: 0;
-            margin-right: 15%;
-            margin-left: 15%;
-            list-style: none;
-        }
-
-        #Googleform {
-            text-align: center;
-        }
-
-        .content-container {
-            width: 100%;
-            padding: 0 15px;
-            /* Optional: Adds some padding on the sides */
-        }
-
-        .content-container h2,
-        .content-container p {
-            width: 100%;
-            text-align: center;
-            /* Adjust text alignment as needed */
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        .page-section {
-            padding: 4rem 0;
-        }
-
-        .contact-container {
-            background: linear-gradient(#ffdad5, #fff7f9);
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: space-evenly;
-        }
-
-        .contact-left {
+            .custom-card .custom-card-body {
             display: flex;
             flex-direction: column;
-            align-items: start;
-            gap: 20px;
-        }
-
-        .contact-left-title h2 {
-            font-weight: 600;
-            color: #a363aa;
-            font-size: 40px;
-            margin-bottom: 5px;
-        }
-
-        .contact-left-title hr {
-            border: none;
-            width: 120px;
-            height: 5px;
-            background-color: #a363aa;
-            border-radius: 10px;
-            margin-bottom: 20px;
-        }
-
-        .contact-inputs {
-            width: 400px;
-            height: 50px;
-            border: none;
-            outline: none;
-            padding-left: 25px;
-            font-weight: 500;
-            color: #666;
-            border-radius: 50px;
-        }
-
-        .contact-left textarea {
-            height: 140px;
-            padding-top: 15px;
-            border-radius: 20px;
-        }
-
-        .contact-inputs:focus {
-            border: 2px solid #ff994f;
-        }
-
-        .contact-inputs::placeholder {
-            color: #a9a9a9;
-        }
-
-        .contact-left button {
-            display: flex;
-            align-items: center;
-            padding: 15px 30px;
-            font-size: 16px;
-            color: #fff;
-            gap: 10px;
-            border: none;
-            border-radius: 50px;
-            background: linear-gradient(270deg, #ff994f, #fa6d86);
-            cursor: pointer;
-        }
-
-        .contact-left button img {
-            height: 15px;
-        }
-
-        .contact-right img {
-            width: 500px;
-        }
-
-        @media (max-width:800px) {
-            .contact-inputs {
-                width: 80vw;
+            justify-content: center;
             }
 
-            .contact-right {
+            .custom-card .custom-card-body .card-title {
+            margin-bottom: 15px;
+            }
+
+            .custom-card .custom-card-body .card-text {
+            margin-bottom: 0;
+            }
+
+            @media (max-width: 992px) {
+            .custom-card .custom-card-body {
+                text-align: center;
+            }
+            }
+
+
+            #faq {
+            background-image:
+                linear-gradient(var(--soft-violet), var(--soft-blue));
+            }
+
+            article {
+            display: grid;
+            margin-top: min(1.5rem, 5vw);
+            width: 90vw;
+            max-width: 56.25rem;
+            margin: auto;
+
+            @media (min-width: 57.06rem) {
+                grid-template-columns: 22.5rem 1fr;
+            }
+            }
+
+            .img-container {
+            grid-row: 1 / span 2;
+            grid-column: 1;
+            z-index: 1;
+            height: min(15rem, 60vw);
+            width: 100%;
+            background-image:
+                var(--mobile-illustration1),
+                var(--mobile-illustration2);
+            background-repeat: no-repeat;
+            background-size: auto 85%, auto 50%;
+            background-position: 50% 0%, 50% 100%;
+
+            @media (min-width: 57.06rem) {
+                grid-row: 1;
+                grid-column: 1;
+                height: 100%;
+                background-color: hsl(0, 0%, 100%);
+                border-radius: 1.25rem 0 0 1.25rem;
+                background-image:
+                var(--desktop-illustration1),
+                var(--desktop-illustration2);
+                background-size: 120%, auto;
+                background-position: 100% 50%, 100% 60%;
+
+                &::before {
+                content: "";
+                display: block;
+                height: 100%;
+                width: 50%;
+                background-image:
+                    var(--desktop-illustration3);
+                background-repeat: no-repeat;
+                background-size: 100%;
+                background-position: left 65%;
+                position: relative;
+                left: -24.5%;
+                }
+            }
+            }
+
+            .faq {
+            grid-row: 2 / span 2;
+            grid-column: 1;
+            padding: min(7.5rem, 30vw) 1.5rem 2.5rem;
+            background-color: hsl(0, 0%, 100%);
+            border-radius: 1.25rem;
+            box-shadow: 0 0.62rem 1.87rem hsla(0, 0%, 0%, .2);
+
+            @media (min-width: 57.06rem) {
+                grid-row: 1;
+                grid-column: 2;
+                padding: 3.5rem 4rem 3.5rem;
+                border-radius: 0 1.25rem 1.25rem 0;
+            }
+
+            h2 {
+                color: var(--very-dark-blue);
+                font-weight: 700;
+                font-size: 1.8rem;
+                text-align: center;
+                margin: 1.2em 0;
+
+                @media (min-width: 57.06rem) {
+                text-align: left;
+                margin: 0 0 1.65em 0;
+                }
+            }
+
+            .q-a {
+                font-size: 0.95rem;
+                border-bottom:
+                1.5px solid var(--light-grayish-blue);
+                padding-bottom: 1.05em;
+                margin-top: 1.05em;
+            }
+
+            .q-wrapper {
+                display: grid;
+                grid-template-columns: 1fr auto;
+            }
+
+            h3 {
+                font-size: 0.95rem;
+                grid-column: 1;
+                color: var(--very-dark-grayish-blue);
+                cursor: pointer;
+
+                &:hover {
+                color: var(--soft-red);
+                }
+
+                &.h3-active {
+                color: var(--very-dark-blue);
+                font-weight: 700;
+                }
+            }
+
+            svg {
+                grid-column: 2;
+                justify-self: end;
+                cursor: pointer;
+                transition: transform 0.2s;
+
+                &.svg-animation {
+                transform: rotate(180deg);
+                }
+            }
+
+            p {
                 display: none;
-            }
-        }
-    </style>
-</head>
+                width: calc(100% - calc(10px + 0.7rem));
+                color: var(--dark-grayish-blue);
+                margin-top: 1.05em;
 
-<body id="page-top">
-    <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-        <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="#page-top"><img src="assets/img/kidocode_icon.png" class="me-2"
-                    height="30px" alt="kidohelp">KidoHelp</a>
-            <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse"
-                data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false"
-                aria-label="Toggle navigation">
+                &.p-visible {
+                display: block;
+                }
+            }
+            }
+
+            .gallery {
+                display: grid;
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 10px;
+                justify-content: center; /* Centers the grid horizontally */
+                align-items: center; /* Centers the grid items vertically */
+            }
+
+            .gallery-item {
+                display: flex; /* Makes the gallery-item a flex container */
+                justify-content: center; /* Centers the image horizontally within the item */
+                align-items: center; /* Centers the image vertically within the item */
+                overflow: hidden;
+            }
+
+            .gallery-item img {
+                max-width: 100%; /* Ensures the image scales properly */
+                max-height: 100%; /* Ensures the image scales properly */
+                height: auto;
+                width: auto;
+                display: block;
+            }
+
+
+            /* Gradient 1: Sunset Vibes */
+            .bg-gradient-1 {
+                background: linear-gradient(to right, #f9d423, #ff4e50); /* Bright Yellow to Red */
+                border-radius: 10px;
+                animation: changeGradientColorSmooth 10s ease-in-out infinite;
+            }
+
+            @keyframes changeGradientColorSmooth {
+                0% {
+                    background: linear-gradient(to right, #f9d423, #ff4e50); /* Bright Yellow to Red */
+                }
+                25% {
+                    background: linear-gradient(to right, #FF6F61, #FF4E50); /* Coral to Red */
+                }
+                50% {
+                    background: linear-gradient(to right, #06BDFC, #FF6F61); /* Blue to Coral */
+                }
+                75% {
+                    background: linear-gradient(to right, #FF6F61, #f9d423); /* Coral to Bright Yellow */
+                }
+                100% {
+                    background: linear-gradient(to right, #f9d423, #ff4e50); /* Back to Bright Yellow to Red */
+                }
+            }
+
+
+            /* Gradient 2: Ocean Breeze */
+            .bg-gradient-2 {
+                background: linear-gradient(to right, #00c6ff, #0072ff); /* Sky Blue to Ocean Blue */
+            }
+
+            /* Gradient 3: Minty Fresh */
+            .bg-gradient-3 {
+                background: linear-gradient(to right, #a8e063, #d6f5d6); /* Mint Green to Light Green */
+            }
+
+            /* Gradient 4: Peachy Pink */
+            .bg-gradient-4 {
+                background: linear-gradient(to right, #fbc2eb, #a6c0fe); /* Peach Pink to Light Blue */
+            }
+
+            /* Gradient 5: Lavender Fields */
+            .bg-gradient-5 {
+                background: linear-gradient(to right, #e6a9f0, #a2c2e2); /* Lavender to Light Blue */
+            }
+
+            /* Gradient 6: Tropical Sunset */
+            .bg-gradient-6 {
+                background: linear-gradient(to right, #ff6f61, #d4a5a5); /* Coral to Light Coral */
+            }
+
+            /* Gradient 7: Juicy Mango */
+            .bg-gradient-7 {
+                background: linear-gradient(to right, #f9d423, #ff4e50); /* Mango Yellow to Juicy Red */
+            }
+
+            /* Gradient 8: Sky and Sea */
+            .bg-gradient-8 {
+                background: linear-gradient(to right, #4facfe, #00f2fe); /* Sky Blue to Aqua Blue */
+            }
+
+            /* Gradient 9: Soft Berry */
+            .bg-gradient-9 {
+                background: linear-gradient(to right, #f79a7b, #f2c7d5); /* Soft Berry to Light Pink */
+            }
+
+            /* Gradient 10: Fun Lemonade */
+            .bg-gradient-10 {
+                background:linear-gradient(#ffdad5,#fff7f9);
+            }
+
+
+            #about img {
+                max-width: 80%; /* Ensures the image doesn't exceed 80% of the container width */
+                height: auto; /* Maintains aspect ratio */
+            }
+
+            @media (max-width: 768px) {
+                #about img {
+                    max-width: 100%; /* Allows logo to be responsive on smaller screens */
+                }
+            }
+
+            .slider {
+                max-width: 100%;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+            .contact {
+                max-width: 100%;
+                box-sizing: border-box;
+                overflow: hidden;
+            }
+            .contact-container{
+                background:linear-gradient(#ffdad5,#fff7f9);
+                height:100vh;
+                display:flex;
+                align-items:center;
+                justify-content:space-evenly;
+            }
+
+            .contact-left{
+                display:flex;
+                flex-direction:column;
+                align-items:start;
+                gap:20px;
+            }
+
+            .contact-left-title h2{
+                font-weight:600;
+                color:#a363aa;
+                font-size:40px;
+                margin-bottom:5px;
+            }
+
+            .contact-left-title hr{
+                border:none;
+                width:120px;
+                height:5px;
+                background-color:#a363aa;
+                border-radius:10px;
+                margin-bottom:20px;
+            }
+
+            .contact-inputs{
+                width:400px;
+                height:50px;
+                border:none;
+                outline:none;
+                padding-left:25px;
+                font-weight:500;
+                color:#666;
+                border-radius:50px;
+            }
+
+            .contact-left textarea{
+                height:140px;
+                padding-top:15px;
+                border-radius:20px;
+            }
+
+            .contact-inputs:focus{
+                border:2px solid #ff994f;
+            }
+
+            .contact-inputs::placeholder{
+                color:#a9a9a9;
+            }
+
+            .contact-left button{
+                display:flex;
+                align-items:center;
+                padding:15px 30px;
+                font-size:16px;
+                color:#fff;
+                gap:10px;
+                border:none;
+                border-radius: 50px;
+                background:linear-gradient(270deg,#ff994f,#fa6d86);
+                cursor:pointer;
+            }
+
+            .contact-left button img{
+                height:15px;
+            }
+            .contact-right img{
+                width:300px;
+            }
+
+            @media (max-width:800px){
+                .contact-inputs{
+                width:80vw;
+                }
+                .contact-right{
+                display:none;
+                }
+            }
+             /* Custom card styling */
+            
+            .card {
+                border: none;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                overflow: hidden;
+                transition: transform 0.2s ease-in-out;
+            }
+
+            /* .card:hover {
+                transform: translateX(-5px);
+            } */
+
+            .card-img-top {
+                border-top-left-radius: 10px;
+                border-top-right-radius: 10px;
+                object-fit: cover;
+                height: 200px;
+            }
+
+            .card-body {
+                background-color: #f8f9fa;
+                padding: 10px 15px;
+                display: flex;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .card-title {
+                font-size: 1.25rem;
+                color: #343a40;
+                font-weight: bold;
+                margin-bottom: 10px;
+            }
+
+            .card-text {
+                color: #6c757d;
+                font-size: 0.95rem;
+                flex-grow: 1;
+            }
+
+            .card-footer {
+                background-color: #f8f9fa;
+                border-top: none;
+                text-align: right;
+                padding: 5px 0;
+            }
+
+            .card-footer a {
+                color: #007bff;
+                font-weight: bold;
+                text-decoration: none;
+            }
+
+            .card-footer a:hover {
+                text-decoration: underline;
+            }
+
+            /* Enhanced carousel navigation arrows */
+            .owl-nav .owl-prev,
+            .owl-nav .owl-next {
+                position: absolute;
+                top: 50%;
+                transform: translateY(-50%);
+                color: white; /* Icon color */
+                border-radius: 50%; /* Make the button circular */
+                padding: 12px; /* Adjust padding for larger buttons */
+                width: 45px; /* Adjust button width */
+                height: 45px; /* Adjust button height */
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                font-size: 1.25rem; /* Icon size */
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Add shadow for a 3D effect */
+                z-index: 1000;
+                transition: background-color 0.3s, transform 0.3s; /* Smooth transition for hover effects */
+                background-color: rgba(0, 0, 0, 0.5); /* Add a semi-transparent background */
+            }
+
+            /* Position adjustments */
+            .owl-nav .owl-prev {
+                left: 10px; /* Adjust to stay within the container */
+            }
+
+            .owl-nav .owl-next {
+                right: 10px; /* Adjust to stay within the container */
+            }
+
+            .owl-nav .owl-prev:hover,
+            .owl-nav .owl-next:hover {
+                background-color: #0056b3; /* Darken background color on hover */
+                transform: translateY(-50%) scale(1.1); /* Slightly enlarge button on hover */
+            }
+
+            .owl-nav .owl-prev:active,
+            .owl-nav .owl-next:active {
+                background-color: #ffffff; /* Even darker background on click */
+                transform: translateY(-50%) scale(0.95); /* Slightly shrink on click for a press effect */
+            }
+
+            /* Media query for smaller screens */
+            @media (max-width: 768px) {
+                .owl-nav .owl-prev,
+                .owl-nav .owl-next {
+                    width: 35px;
+                    height: 35px;
+                    font-size: 1rem;
+                    padding: 8px;
+                }
+
+                .owl-nav .owl-prev {
+                    left: 5px;
+                }
+
+                .owl-nav .owl-next {
+                    right: 5px;
+                }
+            }
+
+
+            /* Reduce padding for nav links to make the navbar more compact */
+            .navbar-nav .nav-link {
+                padding-left: 0.3rem;
+                padding-right: 0.3rem;
+            }
+
+            /* Reduce margin between nav items */
+            .navbar-nav .nav-item {
+                margin: 0.5rem;
+            }
+
+            /* Optional: Decrease font size to fit more items */
+            .navbar-nav .nav-link {
+                font-size: 0.875rem; /* Smaller font size (14px) */
+            }
+
+            /* Adjust the dropdown toggle for a consistent appearance */
+            .navbar-nav .dropdown-toggle::after {
+                margin-left: 0.25rem;
+            }
+
+            /* Adjust navbar-brand spacing to make more room */
+            .navbar-brand {
+                margin-right: 1rem;
+            }
+
+            .navbar-nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: flex-start; /* or center, depending on your layout */
+            }
+
+            /*footer*/
+            .footer {
+                position: relative;
+                width: 100%;
+                background: linear-gradient(#0057FA,#0040B8);
+                min-height: 100px;
+                padding: 20px 50px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                flex-direction: column;
+            }
+
+            .social-icon,
+            .menu {
+                position: relative;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                margin: 10px 0;
+                flex-wrap: wrap;
+            }
+
+            .social-icon__item,
+            .menu__item {
+                list-style: none;
+            }
+
+            .social-icon__link {
+                font-size: 2rem;
+                color: #fff;
+                margin: 0 10px;
+                display: inline-block;
+                transition: 0.5s;
+            }
+            .social-icon__link:hover {
+                transform: translateY(-10px);
+            }
+
+            .menu__link {
+                font-size: 1.2rem;
+                color: #fff;
+                margin: 0 10px;
+                display: inline-block;
+                transition: 0.5s;
+                text-decoration: none;
+                opacity: 0.75;
+                font-weight: 300;
+            }
+
+            .menu__link:hover {
+                opacity: 1;
+            }
+
+            .footer p {
+                color: #fff;
+                margin: 15px 0 10px 0;
+                font-size: 1rem;
+                font-weight: 300;
+            }
+
+            .wave {
+                position: absolute;
+                top: -100px;
+                left: 0;
+                width: 100%;
+                height: 100px;
+                background: url("assets/img/wave_orange.png");
+                background-size: 1000px 100px;
+            }
+
+            .wave#wave1 {
+                z-index: 1000;
+                opacity: 1;
+                bottom: 0;
+                animation: animateWaves 4s linear infinite;
+            }
+
+            .wave#wave2 {
+                z-index: 999;
+                opacity: 0.5;
+                bottom: 10px;
+                animation: animate 4s linear infinite !important;
+            }
+
+            .wave#wave3 {
+                z-index: 1000;
+                opacity: 0.2;
+                bottom: 15px;
+                animation: animateWaves 3s linear infinite;
+            }
+
+            .wave#wave4 {
+                z-index: 999;
+                opacity: 0.7;
+                bottom: 20px;
+                animation: animate 3s linear infinite;
+            }
+
+            @keyframes animateWaves {
+                0% {
+                background-position-x: 1000px;
+                }
+                100% {
+                background-position-x: 0px;
+                }
+            }
+
+            @keyframes animate {
+                0% {
+                background-position-x: -1000px;
+                }
+                100% {
+                background-position-x: 0px;
+                }
+            }
+        </style>
+    </head>
+    <body id="page-top">
+        <!-- Navigation-->
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container-xl px-4 px-lg-5">
+                <a class="navbar-brand fw-bolder" href="#page-top">
+                <img src="assets/img/kidocode_icon.png" class="me-2" height="30px">KidoCode
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarResponsive">
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto my-2 my-lg-0">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#activities">Activities</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#gallery">Gallery</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#about">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="Vision&Mission.html">Vision&Mission</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#partners">Partners</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html#contact">Contact Us</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="faq.html">FAQs</a>
+                    <li class="nav-item"><a class="nav-link" href="#objectives">Objectives</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#testinomials">Testinomials</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#gallery">Gallery</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#slider">Activities</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#partners">Partners</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQs</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+                    <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Language
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <li><a class="dropdown-item" href="index-cn.html">中文</a></li>
+                        <li><a class="dropdown-item" href="index-bm.html">Bahasa Melayu</a></li>
+                    </ul>
                     </li>
                 </ul>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Masthead-->
+        <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">KidoCode</h1>
+                        <hr class="text-secondary"/>
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+                        <p class="text-white-75 mb-5">We believe every child deserves a chance to thrive. By providing free transportation, we open doors to education and enrichment for kids in need. Join us in driving toward a brighter, more inclusive future.
+                        </p>
+                        
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!--Objectives-->
+        <div id="objectives" class="bg-gradient-1 py-3">
+            <div class="container my-5">
+                <!-- Mission Section -->
+                <div class="row">
+                  <div class="col-12 text-center">
+                    <h2 class="display-4 text-white fw-bold">Our Objectives</h2>
+                    <div class="objectives">
+                        <h2>The primary objectives of this initiative are:</h2>
+                        <ol>
+                            <li>Provide underprivileged children with innovative and accessible learning opportunities for personal and professional growth.</li>
+                            <li>Deliver quality education in IT fields to underprivileged children using the Cubie platform.</li>
+                            <li>Focus on courses encompassing coding, mathematics, web development, mobile app development, electronics and robotics, AI, data science, and game development.</li>
+                            <li>Open avenues for employment by fostering collaborations with businesses willing to support our courses.</li>
+                        </ol>
+                    </div>
+                    
+                  </div>
+                </div>
+              
+                <!-- Plan Section -->
+                <div class="row mt-5">
+                  <div class="col-12 text-center">
+                    <h2 class="display-4 text-white fw-bold">Our Approach</h2>
+                  </div>
+                  
+
+                  <div class="col-md-4 mt-4">
+                    <div class="card border-primary h-100">
+                      <div class="card-body">
+                        <h5 class="card-title text-primary">Lorem.</h5>
+                        <p class="card-text text-dark">
+                          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloremque nulla enim vitae ullam dolore nesciunt magnam, quam molestiae aut voluptate necessitatibus autem vel! Illum reprehenderit soluta dolorem magnam, accusamus quisquam?
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+
+                  <div class="col-md-4 mt-4">
+                    <div class="card border-danger h-100">
+                      <div class="card-body">
+                        <h5 class="card-title text-danger">lorem</h5>
+                        <p class="card-text text-dark">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quo earum odio quaerat ipsum distinctio eum ab sint consequatur eligendi. Laboriosam aliquid vel dignissimos recusandae autem pariatur explicabo distinctio ex alias.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+
+                  <div class="col-md-4 mt-4">
+                    <div class="card border-success h-100">
+                      <div class="card-body">
+                        <h5 class="card-title text-success">lorem</h5>
+                        <p class="card-text text-dark">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis fugit, quis porro reprehenderit vel animi officia ut saepe ratione culpa sit? Cupiditate exercitationem odit est deserunt placeat in voluptatum accusantium?
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+
+                  <div class="col-md-4 mt-4">
+                    <div class="card border-warning h-100">
+                      <div class="card-body">
+                        <h5 class="card-title text-warning">lorem</h5>
+                        <p class="card-text text-dark">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem veniam, aspernatur cum sapiente harum in molestias sed tempore provident unde veritatis, accusamus deserunt! Perferendis soluta accusantium placeat harum, voluptas quisquam.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+
+                  <div class="col-md-4 mt-4">
+                    <div class="card border-info h-100">
+                      <div class="card-body">
+                        <h5 class="card-title text-info">lorem</h5>
+                        <p class="card-text text-dark">
+                          Lorem ipsum dolor sit amet consectetur adipisicing elit. Quia, voluptates fugit soluta adipisci consequatur libero, similique dolorem exercitationem dignissimos quam velit expedita odio officiis quis reiciendis ex porro debitis fugiat.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                  
+
+                  <div class="col-md-4 mt-4">
+                    <div class="card border-secondary h-100">
+                      <div class="card-body">
+                        <h5 class="card-title text-secondary">lorem</h5>
+                        <p class="card-text text-dark">
+                          Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptate quos nostrum voluptas veniam, accusamus, explicabo dolorem optio eius saepe rem earum, ratione corporis praesentium? Minus laborum nihil reiciendis laboriosam quos.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              
+        </div>
+
+        <!--About us-->
+        <section id="about" class="bg-gradient-2 text-light py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <!-- Logo Section -->
+                    <div class="col-md-12 mb-4 text-center">
+                        <img src="assets/img/kidocode_title_logo.png" alt="Kidocode Logo and title" class="img-fluid" style="max-width: 80%;">
+                    </div>
+        
+                    <!-- Text Section -->
+                    <div class="col-md-12">
+                        <h2>Who We Are</h2>
+                        <p class="lead">
+                            Kidocode is a school of technology and entrepreneurship for K-12 students. Our community is driven to rebuild the education system for the modern
+                            era by ultilizing our AI-powered platform, Cubie. With over 7000 students and 3 campuses(and growing!) 
+                            across Malaysia, we aim ti transform the digital landscape through education.
+                        </p>
+                    </div>
+                    <div class="col-md-12 text-end mt-4">
+                        <a href="https://www.kidocode.com/" target="_blank" class="btn btn-light shadow-sm">Learn More About Us</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+    
+        <!--Testinomials and stories-->
+        <div id="testinomials" class="bg-gradient-3 py-3">
+            <div class="container mt-4">
+            <div class="row justify-content-center">
+                <div class="col-11">
+                <div class="custom-card card bg-white py-3">
+                    <div class="row g-0 text-center">
+                    <div class="col-lg-6">
+                        <a href="assets/video/Kidohelp_instagram_video.mp4" data-fancybox="video-gallery" data-caption="Video Title">
+                        <img src="assets/img/kidohelp_insta_1.png" class="img-fluid testinomials-video" alt="Video Thumbnail">
+                        </a>
+                    </div>
+                    <div class="col-lg-6 d-flex">
+                        <div class="custom-card-body card-body my-auto bg-white">
+                        <h5 class="card-title ">Video Title</h5>
+                        <p class="card-text">
+                            Description of the video goes here. This description can be as long as necessary to explain the video content.
+                        </p>
+                        </div>
+                    </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+            </div>
+
+        </div>
+        
+        <!-- Gallery Section -->
+        <section id="gallery" class=" bg-gradient-4 py-5">
+            <div class="text-center display-4 fw-bold">
+                Gallery
+            </div>
+            <div class="gallery">
+            <div class="gallery-item">
+                <a href="assets/img/kidohelp_insta_1.png" class="gallery-link" data-fancybox="charity-gallery" data-caption="Activity kidocode">
+                    <img src="assets/img/kidohelp_insta_1.png" alt="Activity 1">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/Arash.png" class="gallery-link" data-fancybox="charity-gallery" data-caption="Activity 2">
+                    <img src="assets/img/Arash.png" alt="Activity 2">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/kidohelp_insta_2.png" class="gallery-link" data-fancybox="charity-gallery" data-caption="Activity 3">
+                    <img src="assets/img/kidohelp_insta_2.png" alt="Activity 3">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/kidohelp_insta_3.png" class="gallery-link" data-fancybox="charity-gallery" data-caption="Activity 4">
+                    <img src="assets/img/kidohelp_insta_3.png" alt="Activity 4">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/kidohelp_insta_4.png" class="gallery-link" data-fancybox="charity-gallery" data-caption="Activity 5">
+                    <img src="assets/img/kidohelp_insta_4.png" alt="Activity 5">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/kidocode_family.jpeg" class="gallery-link" data-fancybox="charity-gallery" data-caption="Activity 6">
+                    <img src="assets/img/kidocode_family.jpeg" alt="Activity 6">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/kidocode_logo_outline.jpg" class="gallery-link" data-fancybox="charity-gallery" data-caption="Activity 7">
+                    <img src="assets/img/kidocode_logo_outline.jpg" alt="Activity 7">
+                </a>
+            </div>
+            <div class="gallery-item">
+                <a href="assets/img/kidocode_title_logo.png" class="gallery-link" data-fancybox="charity-gallery" data-caption="Activity 8">
+                    <img src="assets/img/kidocode_title_logo.png" alt="Activity 8">
+                </a>
             </div>
         </div>
-    </nav>
+        </section>
 
-    <!-- Masthead-->
-    <header class="masthead">
-        <div class="container px-4 px-lg-5 h-100">
-            <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
-                <div class="col-lg-8 align-self-end">
-                    <h1 class="text-white font-weight-bold">KidoHelp</h1>
-                    <hr class="divider" />
-                </div>
-                <div class="col-lg-8 align-self-baseline">
-                    <p class="text-white-75 mb-5">
-                        We believe every child deserves a chance to thrive. By providing
-                        free transportation, we open doors to education and enrichment for
-                        kids in need. Join us in driving toward a brighter, more inclusive
-                        future.
-                    </p>
-                    <a class="btn btn-primary btn-xl" href="#about">Find Out More</a>
+
+        <!-- Services-->
+        <section class="page-section bg-gradient-5" id="services">
+            <div class="container px-3 px-lg-4">
+                <h2 class="text-center mt-0">At Your Service</h2>
+                <hr class="divider" />
+                <div class="row gx-4 gx-lg-5">
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-gem fs-1 text-blue"></i></div>
+                            <h3 class="h4 mb-2">Sturdy Themes</h3>
+                            <p class="text-muted mb-0">Our themes are updated regularly to keep them bug free!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-laptop fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Up to Date</h3>
+                            <p class="text-muted mb-0">All dependencies are kept current to keep things fresh.</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-globe fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Ready to Publish</h3>
+                            <p class="text-muted mb-0">You can use this design as is, or you can make changes!</p>
+                        </div>
+                    </div>
+                    <div class="col-lg-3 col-md-6 text-center">
+                        <div class="mt-5">
+                            <div class="mb-2"><i class="bi-heart fs-1 text-primary"></i></div>
+                            <h3 class="h4 mb-2">Made with Love</h3>
+                            <p class="text-muted mb-0">Is it really open source if it's not made with love?</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </header>
-
-    <!--activities/slider-->
-    <section id="activities" class=" py-3 bg-primary">
-        <div class="container">
-            <div class="text-center text-white">
-                <h2 class="h2">
-                    Activities/Sliders
-                </h2>
-                <hr class="border border-white border-3 opacity-75">
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure ad, voluptatum dolores similique et
-                    odio magnam unde, recusandae nam quisquam ut nulla facilis, quam perspiciatis! Iste tempore
-                    cupiditate nemo et.</p>
-            </div>
-            <div id="cardCarousel" class="carousel slide" data-bs-ride="carousel">
-                <!-- Indicators (optional) -->
-                <div class="carousel-indicators">
-                    <button type="button" data-bs-target="#cardCarousel" data-bs-slide-to="0" class="active"
-                        aria-current="true" aria-label="Slide 1"></button>
-                    <button type="button" data-bs-target="#cardCarousel" data-bs-slide-to="1"
-                        aria-label="Slide 2"></button>
-                </div>
-
-                <!-- Carousel Items -->
-                <div class="carousel-inner">
-                    <!-- First Slide (3 Cards) -->
-                    <div class="carousel-item active">
-                        <div class="row justify-content-around">
-                            <div class="col-md-4">
-                                <div class="card" style="width: 90%;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card Title 1</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make
-                                            up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card" style="width: 90%;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card Title 2</h5>
-                                        <p class="card-text">Some more quick example text.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card" style="width: 90%;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card Title 3</h5>
-                                        <p class="card-text">Even more quick example text.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
+        </section>
+        
+        
+        <!--card carousel-->
+        <div id="slider" class="bg-gradient-7 p-2">
+            <div class="container my-5">
+                <div class="owl-carousel owl-theme">
+                    <!-- Card 1 -->
+                    <div class="item">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Card 1">
+                            <div class="card-body">
+                                <h5 class="card-title">Card 1</h5>
+                                <p class="card-text">Description for card 1. Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptatibus cupiditate fugit quisquam ipsa consequatur perspiciatis, debitis itaque, tempora praesentium repellendus recusandae enim, nostrum sequi est labore amet laborum sapiente repudiandae. </p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Second Slide (3 Cards) -->
-                    <div class="carousel-item">
-                        <div class="row justify-content-around">
-                            <div class="col-md-4">
-                                <div class="card" style="width: 90%;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card Title 4</h5>
-                                        <p class="card-text">Some quick example text to build on the card title and make
-                                            up the bulk of the card's content.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
+                    <!-- Card 2 -->
+                    <div class="item">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Card 2">
+                            <div class="card-body">
+                                <h5 class="card-title">Card 2</h5>
+                                <p class="card-text">Description for card 2.</p>
                             </div>
-                            <div class="col-md-4">
-                                <div class="card" style="width: 90%;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card Title 5</h5>
-                                        <p class="card-text">Some more quick example text.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+                    <!-- Card 3 -->
+                    <div class="item">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Card 3">
+                            <div class="card-body">
+                                <h5 class="card-title">Card 3</h5>
+                                <p class="card-text">Description for card 3.</p>
                             </div>
-                            <div class="col-md-4">
-                                <div class="card" style="width: 90%;">
-                                    <div class="card-body">
-                                        <h5 class="card-title">Card Title 6</h5>
-                                        <p class="card-text">Even more quick example text.</p>
-                                        <a href="#" class="btn btn-primary">Go somewhere</a>
-                                    </div>
-                                </div>
+                        </div>
+                    </div>
+                    <!-- Card 4 -->
+                    <div class="item">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Card 4">
+                            <div class="card-body">
+                                <h5 class="card-title">Card 4</h5>
+                                <p class="card-text">Description for card 4.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 5 -->
+                    <div class="item">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Card 5">
+                            <div class="card-body">
+                                <h5 class="card-title">Card 5</h5>
+                                <p class="card-text">Description for card 5.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 6 -->
+                    <div class="item">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Card 6">
+                            <div class="card-body">
+                                <h5 class="card-title">Card 6</h5>
+                                <p class="card-text">Description for card 6.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 7 -->
+                    <div class="item">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Card 7">
+                            <div class="card-body">
+                                <h5 class="card-title">Card 7</h5>
+                                <p class="card-text">Description for card 7.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 8 -->
+                    <div class="item">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Card 8">
+                            <div class="card-body">
+                                <h5 class="card-title">Card 8</h5>
+                                <p class="card-text">Description for card 8.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Card 9 -->
+                    <div class="item">
+                        <div class="card">
+                            <img src="https://via.placeholder.com/350x200" class="card-img-top" alt="Card 9">
+                            <div class="card-body">
+                                <h5 class="card-title">Card 9</h5>
+                                <p class="card-text">Description for card 9.</p>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <!-- Carousel Controls -->
-                <button class="carousel-control-prev" type="button" data-bs-target="#cardCarousel" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#cardCarousel" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
             </div>
         </div>
-    </section>
 
-    <!--Gallery-->
-    <section class="page-section" id="gallery">
-        <h2 class="text-center mt-0">Gallery</h2>
-        <hr class="divider" />
-        <div class="swiper mySwiper">
-            <div class="swiper-wrapper">
-                <div class="swiper-slide">
-                    <img alt="pic1" src="https://swiperjs.com/demos/images/nature-1.jpg" />
+        <!--Partners-->
+        <section id="partners" class="py-5 bg-gradient-8">
+            <div class="container">
+                <div class="text-center">
+                    <h2>Partners</h2>
+                    <hr class="border border-white border-3 opacity-75">
                 </div>
-                <div class="swiper-slide">
-                    <img alt="pic1" src="https://swiperjs.com/demos/images/nature-2.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img alt="pic1" src="https://swiperjs.com/demos/images/nature-3.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img alt="pic1" src="https://swiperjs.com/demos/images/nature-4.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img alt="pic1" src="https://swiperjs.com/demos/images/nature-5.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img alt="pic1" src="https://swiperjs.com/demos/images/nature-6.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img alt="pic1" src="https://swiperjs.com/demos/images/nature-7.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img alt="pic1" src="https://swiperjs.com/demos/images/nature-8.jpg" />
-                </div>
-                <div class="swiper-slide">
-                    <img alt="pic1" src="https://swiperjs.com/demos/images/nature-9.jpg" />
+                <div class="row justify-content-around">
+                    <div class="col-sm-5 col-lg-3 mb-3 card" style="width: 18rem;">
+                        <img src="assets/img/unclecode.png" class="card-img-top" alt="unclecode">
+                        <div class="card-body">
+                          <h5 class="card-title">UNCLECODE</h5>
+                          <p class="card-text">Founder, CEO. Hossein, or Unclecode as he prefers, is a Computer Science expert specializing in Natural Language Processing, Data Science, and AI.</p>
+                        </div>
+                      </div>
+                      <div class="col-sm-5 col-lg-3 mb-3 card" style="width: 18rem;">
+                        <img src="assets/img/masyam.png" class="card-img-top" alt="unclecode">
+                        <div class="card-body">
+                          <h5 class="card-title">Maysam</h5>
+                          <p class="card-text">Co-Founder, COO. Maysam is an expert in the field of Molecular Biology specializing in drug discovery for cancer and bioinformatics.</p>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-lg-3 mb-3 card" style="width: 18rem;">
+                        <img src="assets/img/Arash.png" class="card-img-top" alt="unclecode">
+                        <div class="card-body">
+                          <h5 class="card-title">Arash</h5>
+                          <p class="card-text">VP of Technology. Arash is experienced in leading the entire development process of Kidocode's new products, projects, and programs.</p>
+                        </div>
+                      </div>
                 </div>
             </div>
-            <div class="swiper-pagination"></div>
-        </div>
-    </section>
+            
+        </section>
 
-    <!-- About-->
-    <section class="page-section bg-primary" id="about">
-        <div class="container px-4 px-lg-5 custom-container">
-            <div class="row gx-4 gx-lg-5 justify-content-center">
-                <div class="content-container">
-                    <h2 class="text-white mt-0 text-center">About us</h2>
-                    <hr class="divider divider-light" />
-                    <p class="text-white-75 mb-8">
-                        We are dedicated to making a meaningful difference in the lives of
-                        children in need. We understand that for many families, the cost
-                        of transportation can be a significant barrier to accessing
-                        essential educational and recreational opportunities.<br /><br />
-                        That’s why we’ve made it our mission to collect donations and
-                        organize transportation services for kids who cannot afford it.
-                        With the generous support of our donors and partners, we ensure
-                        that every child has the chance to participate in educational
-                        activities, extracurricular programs, and other enriching
-                        experiences, regardless of their financial situation.<br /><br />
 
-                        Your support helps us provide safe and reliable transportation,
-                        enabling these young individuals to reach their full potential and
-                        thrive. Join Us in Our Mission to make education and growth
-                        accessible to all children. Together, we can create a brighter
-                        future for every child in need.
-                    </p>
-                    <div class="text-center">
-                        <a class="btn btn-light btn-xl" href="Vision&Mission.html">Get Started!</a>
-                    </div>
+        <!--FAQs-->
+        <section class="page-section" id="faq">
+            <article>
+              <div class="img-container"></div>
+              <div class="faq">
+                <h2>FAQ</h2>
+                <div class="q-a">
+                  <div class="q-wrapper">
+                    <h3 tabindex="0">How many team members can I invite?</h3>
+                    <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p>You can invite up to 2 additional users on the Free plan. There is no limit on
+                    team members for the Premium plan.</p>
                 </div>
-            </div>
-        </div>
-    </section>
+        
+                <div class="q-a">
+                  <div class="q-wrapper">
+                    <h3 tabindex="0">What is the maximum file upload size?</h3>
+                    <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p>No more than 2GB. All files in your account must fit your allotted storage space.</p>
+                </div>
+        
+                <div class="q-a">
+                  <div class="q-wrapper">
+                    <h3 tabindex="0">How do I reset my password?</h3>
+                    <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p>Click “Forgot password” from the login page or “Change password” from your profile page.
+                    A reset link will be emailed to you.</p>
+                </div>
+        
+                <div class="q-a">
+                  <div class="q-wrapper">
+                    <h3 tabindex="0">Can I cancel my subscription?</h3>
+                    <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p>Yes! Send us a message and we’ll process your request no questions asked.</p>
+                </div>
+        
+                <div class="q-a">
+                  <div class="q-wrapper">
+                    <h3 tabindex="0">Do you provide additional support?</h3>
+                    <svg width="10" height="7" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M1 .799l4 4 4-4" stroke="#F47B56" stroke-width="2" fill="none" fill-rule="evenodd" />
+                    </svg>
+                  </div>
+                  <p>Chat and email support is available 24/7. Phone lines are open during normal business hours.</p>
+                </div>
+              </div>
+            </article>
+          </section>
+        
 
-    <!-- Partners-->
-    <section class="page-section" id="partners">
-        <div class="container px-4 px-lg-5">
-            <h2 class="text-center mt-0">Partners</h2>
-            <hr class="divider" />
-            <div class="row gx-4 gx-lg-5">
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <img src="https://via.placeholder.com/150" class="rounded-circle profile-pic mx-auto d-block"
-                            alt="Profile Picture" />
-                        <h3 class="h4 mb-2">John</h3>
-                        <p class="text-muted mb-0">CEO of Rojak Company.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <img src="https://via.placeholder.com/150" class="rounded-circle profile-pic mx-auto d-block"
-                            alt="Profile Picture" />
-                        <h3 class="h4 mb-2">Millie</h3>
-                        <p class="text-muted mb-0">Sales Manager of Invester Sdn. Bhd.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <img src="https://via.placeholder.com/150" class="rounded-circle profile-pic mx-auto d-block"
-                            alt="Profile Picture" />
-                        <h3 class="h4 mb-2">Sarah</h3>
-                        <p class="text-muted mb-0">Principal of SK Sungai Long.</p>
-                    </div>
-                </div>
-                <div class="col-lg-3 col-md-6 text-center">
-                    <div class="mt-5">
-                        <img src="https://via.placeholder.com/150" class="rounded-circle profile-pic mx-auto d-block"
-                            alt="Profile Picture" />
-                        <h3 class="h4 mb-2">Fatimah</h3>
-                        <p class="text-muted mb-0">Teacher of SK Sungai Long.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section class="page-section" id="contact">
-        <div class="contact-container">
-            <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
+        <section class="page-section bg-gradient-10" id="contact">
+            <div class="contact-container">
+              <form action="https://api.web3forms.com/submit" method="POST" class="contact-left">
                 <div class="contact-left-title">
-                    <h2>Get in touch</h2>
-                    <hr>
+                  <h2>Get in touch</h2>
+                  <hr>
                 </div>
                 <input type="hidden" name="access_key" value="52582f9c-983d-4411-a242-66a70caed425">
                 <input type="text" name="name" placeholder="Your Name" class="contact-inputs" required>
                 <input type="email" name="email" placeholder="Your Email" class="contact-inputs" required>
                 <textarea name="message" placeholder="Your Message" class="contact-inputs" required></textarea>
                 <button type="submit">Submit <img src="assets/img/arrow_icon.png" alt=""></button>
-            </form>
-            <div class="contact-right">
+              </form>
+              <div class="contact-right">
                 <img src="assets/img/right_img.png" alt="">
+              </div>
             </div>
-        </div>
-    </section>
+          </section>
 
-    <!-- Footer-->
-    <footer class="bg-light py-5">
-        <div class="container px-4 px-lg-5">
-            <div class="small text-center text-muted">
-                Copyright &copy; 2023 - Company Name
+        <!-- Footer-->
+            <!-- Footer-->
+        <footer class="footer">
+            <div class="waves">
+            <div class="wave" id="wave1"></div>
+            <div class="wave" id="wave2"></div>
+            <div class="wave" id="wave3"></div>
+            <div class="wave" id="wave4"></div>
             </div>
-        </div>
-    </footer>
-    <!-- Bootstrap core JS-->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- SimpleLightbox plugin JS-->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
-    <!-- Core theme JS-->
-    <script src="js/scripts.js"></script>
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <!-- * *                               SB Forms JS                               * *-->
-    <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-    <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-    <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <!-- Initialize Swiper -->
-    <script>
-        var swiper = new Swiper(".mySwiper", {
-            effect: "coverflow",
-            grabCursor: true,
-            centeredSlides: true,
-            slidesPerView: "auto",
-            loop: true,
-            autoplay: {
-                delay: 3000,
-                disableOnInteraction: false,
-            },
-            coverflowEffect: {
-                rotate: 50,
-                stretch: 0,
-                depth: 150,
-                modifier: 1,
-                slideShadows: true,
-            },
-            pagination: {
-                el: ".swiper-pagination",
-            },
-        });
-    </script>
-</body>
+            <ul class="social-icon">
+            <li class="social-icon__item"><a class="social-icon__link" href="https://www.facebook.com/KidoCode" target="_blank">
+                <ion-icon name="logo-facebook"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="https://x.com/kidocode" target="_blank">
+                <ion-icon name="logo-twitter"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="https://www.linkedin.com/company/kidocode/" target="_blank">
+                <ion-icon name="logo-linkedin"></ion-icon>
+                </a></li>
+            <li class="social-icon__item"><a class="social-icon__link" href="https://www.instagram.com/kidocode/" target="_blank">
+                <ion-icon name="logo-instagram"></ion-icon>
+                </a></li>
+            </ul>
+            <ul class="menu">
+            <li class="menu__item"><a class="menu__link" href="#">To the top</a></li>
+            <li class="menu__item"><a class="menu__link" href="#objectives">Objectives</a></li>
+            <li class="menu__item"><a class="menu__link" href="#about">About</a></li>
+            <li class="menu__item"><a class="menu__link" href="#testinomials">Testinomials</a></li>
+            <li class="menu__item"><a class="menu__link" href="#gallery">Gallery</a></li>
+            <li class="menu__item"><a class="menu__link" href="#services">Services</a></li>
+            <li class="menu__item"><a class="menu__link" href="#slider">Activities</a></li>
+            <li class="menu__item"><a class="menu__link" href="#partners">Partners</a></li>
+            <li class="menu__item"><a class="menu__link" href="#faq">FAQs</a></li>
+            <li class="menu__item"><a class="menu__link" href="#contact">Contact Us</a></li>
+        
+            </ul>
+            <p>&copy;KidoHelp | Something Something</p>
+        </footer>
+        
+        <!-- jQuery (must be loaded first) -->
 
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+        <!-- Bootstrap core JS (includes Popper.js) -->
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+        
+        <!-- Owl Carousel JS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+       
+   
+        <!-- Core theme JS -->
+        <script src="js/scripts.js"></script>
+        
+        <!-- Ionicons (for additional icons) -->
+        <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+        <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+        <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.5.7/jquery.fancybox.min.js"></script>
+
+        <script>
+            $(document).ready(function(){
+                $('.owl-carousel').owlCarousel({
+                    loop: true,
+                    margin: 10,
+                    nav: true,
+                    dots: true, // Enable carousel indicators
+                    navText: [
+                        '<i class="bi bi-chevron-left"></i>',
+                        '<i class="bi bi-chevron-right"></i>'
+                    ],
+                    responsive: {
+                        0: {
+                            items: 1
+                        },
+                        576: {
+                            items: 2
+                        },
+                        992: {
+                            items: 3
+                        }
+                    }
+                });
+            });
+        </script>
+        <script>
+            // Prevent the dropdown from closing when clicking inside it
+            document.querySelectorAll('.dropdown-menu').forEach(function(dropdown) {
+              dropdown.addEventListener('click', function(e) {
+                e.stopPropagation();
+              });
+            });
+          </script>
+      
+    </body>
 </html>
