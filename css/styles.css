@@ -280,6 +280,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   font-size: 1.5rem;
   color: #303033;
   margin-bottom: 1rem;
+  font-family: Space Grotesk Bold;
 }
 
 .objectives ol {
@@ -297,6 +298,7 @@ a:not([href]):not([class]), a:not([href]):not([class]):hover {
   padding-left: 2rem;
   position: relative;
   color: #1D1C1b;
+  font-family: Tenon Sans Medium;
 }
 
 .objectives ol li:before {
